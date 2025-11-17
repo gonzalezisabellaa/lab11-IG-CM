@@ -18,24 +18,23 @@ def add(a, b):
 def subtract(a, b):
     return a - b
 
-def mul(a, b):
+def multiply(a, b):
     return a * b
 
-def div(a, b):
-    if(a == 0):
+def divide(a, b):
+    if b == 0:
         raise ZeroDivisionError("Cannot divide by zero")
-    else:
-        return b/a
+    return a / b
 
 def logarithm(a, b):
     base = a
     x = b
     if(x<=0):
-        raise ValueError("Cannot take log of something less than zero")
+        raise ValueError("Cannot take log of something less than or equal to zero")
     elif base<= 0 or base == 1:
         raise ValueError("Base must be greater than zero and not equal to one")
     else:
         return math.log(x, base)
 
-def exp(a,b):
+def exponent(a, b):
     return a ** b
