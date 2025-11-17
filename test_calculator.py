@@ -41,5 +41,28 @@ class TestCalculator(unittest.TestCase):
         with self.assertRaises(ValueError):
             square_root(-9)
 
+    def test_add(self):
+        self.assertEqual(add(6, 7), 13)
+        self.assertEqual(add(-1, 1), 0)
+        self.assertEqual(add(0, 0), 0)
+
+    def test_subtract(self):
+        self.assertEqual(subtract(13, 3), 10)
+        self.assertEqual(subtract(0, 5), -5)
+        self.assertEqual(subtract(-2, -3), 1)
+
+    def test_divide_by_zero(self):
+        with self.assertRaises(ZeroDivisionError):
+            div(0, 4)
+
+    def test_logarithm(self):
+        self.assertEqual(logarithm(2, 8), 3)
+        self.assertEqual(logarithm(10, 1), 0)
+        self.assertEqual(logarithm(10, 10), 1)
+
+    def test_log_invalid_base(self):
+        with self.assertRaises(ValueError):
+            logarithm(1, 10)
+
 if __name__ == '__main__':
     unittest.main()
