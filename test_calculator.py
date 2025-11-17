@@ -53,7 +53,7 @@ class TestCalculator(unittest.TestCase):
 
     def test_divide_by_zero(self):
         with self.assertRaises(ZeroDivisionError):
-            div(0, 4)
+            div(4, 0)
 
     def test_logarithm(self):
         self.assertEqual(logarithm(2, 8), 3)
