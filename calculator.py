@@ -15,21 +15,27 @@ def hypotenuse(a, b):
 def add(a, b):
     return a + b
 
-def subtract(a, b):
+def sub(a, b):
     return a - b
 
-def multiply(a, b):
+def mul(a, b):
     return a * b
 
-def divide(a, b):
-    if b == 0:
+def div(a, b):
+    if(a == 0):
         raise ZeroDivisionError("Cannot divide by zero")
-    return a / b
+    else:
+        return b/a
 
-def logarithm(a, b):
-    if a <= 0 or b <= 0 or a == 1:
-        raise ValueError("Invalid log arguments")
-    return math.log(b, a)
+def log(a, b):
+    base = a
+    x = b
+    if(x<=0):
+        raise ValueError("Cannot take log of something less than zero")
+    elif base<= 0 or base == 1:
+        raise ValueError("Base must be greater than zero and not equal to one")
+    else:
+        return math.log(x, base)
 
-def exponent(a, b):
+def exp(a,b):
     return a ** b
